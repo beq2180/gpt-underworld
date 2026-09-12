@@ -1,5 +1,6 @@
 package com.chatty.underworld.portal;
 
+import java.util.ArrayList;
 import com.chatty.underworld.ModBlocks;
 import com.chatty.underworld.UnderworldMod;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
