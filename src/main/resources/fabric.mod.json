@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "underworld",
+  "version": "${version}",
+  "name": "The Underworld",
+  "description": "Adds the Underworld dimension, Undium portals, Ashlands, Trunks and Islands.",
+  "authors": [
+    "Chatty + Sean"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/underworld/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.chatty.underworld.UnderworldMod"
+    ],
+    "client": [
+      "com.chatty.underworld.UnderworldClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

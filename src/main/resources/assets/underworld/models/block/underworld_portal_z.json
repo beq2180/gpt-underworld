@@ -1,0 +1,34 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "portal": "underworld:block/underworld_portal"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        6
+      ],
+      "to": [
+        16,
+        16,
+        10
+      ],
+      "faces": {
+        "east": {
+          "texture": "#portal"
+        },
+        "west": {
+          "texture": "#portal"
+        },
+        "north": {
+          "texture": "#portal"
+        },
+        "south": {
+          "texture": "#portal"
+        }
+      }
+    }
+  ]
+}

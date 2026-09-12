@@ -1,0 +1,51 @@
+{
+  "attributes": {
+    "minecraft:visual/fog_color": "#171126",
+    "minecraft:visual/sky_color": "#0d0818",
+    "minecraft:visual/water_fog_color": "#171020"
+  },
+  "carvers": [],
+  "downfall": 0.0,
+  "effects": {
+    "foliage_color": "#352b43",
+    "grass_color": "#352b43",
+    "water_color": "#2c2342"
+  },
+  "features": [
+    [
+      "underworld:islands_terrain"
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "underworld:deepslate_coal",
+      "underworld:deepslate_iron",
+      "underworld:deepslate_copper",
+      "underworld:deepslate_gold",
+      "underworld:deepslate_redstone",
+      "underworld:deepslate_lapis",
+      "underworld:deepslate_diamond",
+      "underworld:deepslate_emerald"
+    ],
+    [],
+    [],
+    [],
+    []
+  ],
+  "has_precipitation": false,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.65
+}
