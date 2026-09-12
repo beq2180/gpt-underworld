@@ -1,6 +1,5 @@
 package com.chatty.underworld.portal;
 
-import java.util.ArrayList;
 import com.chatty.underworld.ModBlocks;
 import com.chatty.underworld.UnderworldMod;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -23,6 +22,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.Heightmap;
 import net.minecraft.world.World;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 public final class PortalManager {

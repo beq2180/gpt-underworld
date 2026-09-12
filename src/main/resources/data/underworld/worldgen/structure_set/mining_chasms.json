@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "underworld:mining_chasm",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 218033,
+    "spacing": 42,
+    "separation": 14
+  }
+}

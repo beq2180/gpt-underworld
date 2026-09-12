@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "underworld:underworld_village",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 218031,
+    "spacing": 34,
+    "separation": 9
+  }
+}

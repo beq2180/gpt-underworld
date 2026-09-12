@@ -55,3 +55,14 @@ added cleanly next without entangling the biome/terrain code.
 
 The custom terrain passes run during world generation. Existing chunks are not
 retrofitted.
+
+
+## v0.2 structures
+
+The Underworld now includes three data-driven structures:
+
+- **Underworld Village** — deepslate/dark-oak settlement inspired by a plains village.
+- **Small Dungeon** — underground deepslate room with zombie/skeleton spawners and basic loot chests.
+- **Mining Chasm** — a deep open excavation shaft with a broken, non-functional redstone mining machine at the bottom.
+
+Test with `/locate structure underworld:underworld_village`, `/locate structure underworld:small_dungeon`, and `/locate structure underworld:mining_chasm`.

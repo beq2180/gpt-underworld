@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "underworld:small_dungeon",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 218032,
+    "spacing": 14,
+    "separation": 5
+  }
+}
