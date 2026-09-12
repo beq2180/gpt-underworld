@@ -66,3 +66,8 @@ The Underworld now includes three data-driven structures:
 - **Mining Chasm** — a deep open excavation shaft with a broken, non-functional redstone mining machine at the bottom.
 
 Test with `/locate structure underworld:underworld_village`, `/locate structure underworld:small_dungeon`, and `/locate structure underworld:mining_chasm`.
+
+
+## v0.2.1 roof fix
+
+Fixed Underworld Village roofs so dark-oak stair gables slope inward correctly instead of expanding sideways into long wooden ribs.
