@@ -66,7 +66,7 @@ public final class PortalManager {
         });
 
         ServerTickEvents.END_WORLD_TICK.register(world -> {
-            for (ServerPlayerEntity player : world.getPlayers()) {
+            for (ServerPlayerEntity player : new ArrayList<>(world.getPlayers())) {
                 if (player.hasPortalCooldown()) continue;
                 if (!touchingPortal(world, player)) continue;
 
