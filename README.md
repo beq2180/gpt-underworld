@@ -71,3 +71,7 @@ Test with `/locate structure underworld:underworld_village`, `/locate structure 
 ## v0.2.1 roof fix
 
 Fixed Underworld Village roofs so dark-oak stair gables slope inward correctly instead of expanding sideways into long wooden ribs.
+
+
+## v0.2.2
+- Added a per-player 20-tick (1 second) portal grace period after dimension travel so players are not immediately teleported back while standing in the destination portal.

@@ -23,11 +23,17 @@ import net.minecraft.world.Heightmap;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
+import java.util.UUID;
 
 public final class PortalManager {
     public static final RegistryKey<World> UNDERWORLD_WORLD =
             RegistryKey.of(RegistryKeys.WORLD, UnderworldMod.id("the_underworld"));
+
+    private static final int PORTAL_GRACE_TICKS = 20;
+    private static final Map<UUID, Integer> PORTAL_GRACE = new HashMap<>();
 
     public static void initialize() {
         UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
@@ -65,8 +71,14 @@ public final class PortalManager {
             return ActionResult.PASS;
         });
 
+        ServerTickEvents.START_SERVER_TICK.register(server -> {
+            PORTAL_GRACE.replaceAll((uuid, ticks) -> ticks - 1);
+            PORTAL_GRACE.entrySet().removeIf(entry -> entry.getValue() <= 0);
+        });
+
         ServerTickEvents.END_WORLD_TICK.register(world -> {
             for (ServerPlayerEntity player : new ArrayList<>(world.getPlayers())) {
+                if (PORTAL_GRACE.containsKey(player.getUuid())) continue;
                 if (player.hasPortalCooldown()) continue;
                 if (!touchingPortal(world, player)) continue;
 
@@ -94,6 +106,9 @@ public final class PortalManager {
         BlockPos existing = findNearbyPortal(target, x, z, 20);
         BlockPos exit = existing != null ? existing : buildExitPortal(target, x, z);
 
+        // Keep the exit portal inactive for this player for one second so
+        // loading into the destination cannot immediately send them back.
+        PORTAL_GRACE.put(player.getUuid(), PORTAL_GRACE_TICKS);
         player.resetPortalCooldown();
         player.teleport(
                 target,
