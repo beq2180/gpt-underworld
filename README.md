@@ -75,3 +75,11 @@ Fixed Underworld Village roofs so dark-oak stair gables slope inward correctly i
 
 ## v0.2.2
 - Added a per-player 20-tick (1 second) portal grace period after dimension travel so players are not immediately teleported back while standing in the destination portal.
+
+## v0.3.0 - Gloomgrazer
+- Adds the friendly Gloomgrazer passive mob.
+- Cow-like wandering and wheat breeding.
+- 15 HP.
+- Adult Gloomgrazers can be bottled with a glass bottle to obtain Dragon's Breath.
+- Spawns naturally in Ashlands, Trunks, and Islands.
+- Quick test: `/summon underworld:gloomgrazer`.

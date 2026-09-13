@@ -1,5 +1,6 @@
 package com.chatty.underworld;
 
+import com.chatty.underworld.entity.ModEntities;
 import com.chatty.underworld.portal.PortalManager;
 import com.chatty.underworld.worldgen.ModWorldgen;
 import net.fabricmc.api.ModInitializer;
@@ -18,6 +19,7 @@ public final class UnderworldMod implements ModInitializer {
     @Override
     public void onInitialize() {
         ModBlocks.initialize();
+        ModEntities.initialize();
         ModWorldgen.initialize();
         PortalManager.initialize();
         LOGGER.info("The Underworld initialized.");

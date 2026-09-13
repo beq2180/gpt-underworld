@@ -43,7 +43,14 @@
   "spawners": {
     "ambient": [],
     "axolotls": [],
-    "creature": [],
+    "creature": [
+      {
+        "type": "underworld:gloomgrazer",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 8
+      }
+    ],
     "misc": [],
     "monster": [],
     "underground_water_creature": [],
