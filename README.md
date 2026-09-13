@@ -83,3 +83,8 @@ Fixed Underworld Village roofs so dark-oak stair gables slope inward correctly i
 - Adult Gloomgrazers can be bottled with a glass bottle to obtain Dragon's Breath.
 - Spawns naturally in Ashlands, Trunks, and Islands.
 - Quick test: `/summon underworld:gloomgrazer`.
+
+## v0.3.2
+- Gloomgrazer natural spawning is restricted to Ashlands and Trunks (not Islands).
+- Gloomgrazers use a dark-dimension-safe custom spawn predicate on Groil, so they do not require vanilla animal skylight.
+- Added custom synthesized Gloomgrazer ambient, hurt, death, and bottle-milking sounds.

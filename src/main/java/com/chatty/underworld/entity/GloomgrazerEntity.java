@@ -1,7 +1,11 @@
 package com.chatty.underworld.entity;
 
+import com.chatty.underworld.ModBlocks;
+import com.chatty.underworld.ModSounds;
+import com.chatty.underworld.worldgen.ModWorldgen;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.passive.AbstractCowEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -9,9 +13,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsage;
 import net.minecraft.item.Items;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundEvents;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
+import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 
 public final class GloomgrazerEntity extends AbstractCowEntity {
@@ -22,6 +29,42 @@ public final class GloomgrazerEntity extends AbstractCowEntity {
     @Override
     public GloomgrazerEntity createChild(ServerWorld world, PassiveEntity other) {
         return ModEntities.GLOOMGRAZER.create(world, SpawnReason.BREEDING);
+    }
+
+    /**
+     * Gloomgrazers live in a dark dimension, so vanilla animal light checks are intentionally
+     * not used. They may naturally spawn on Groil in Ashlands and Trunks, never Islands.
+     */
+    public static boolean canSpawn(
+            EntityType<GloomgrazerEntity> type,
+            ServerWorldAccess world,
+            SpawnReason reason,
+            BlockPos pos,
+            Random random
+    ) {
+        boolean allowedBiome = world.getBiome(pos).matchesKey(ModWorldgen.ASHLANDS)
+                || world.getBiome(pos).matchesKey(ModWorldgen.TRUNKS);
+
+        if (!allowedBiome) return false;
+
+        return world.getBlockState(pos.down()).isOf(ModBlocks.GROIL)
+                && world.getBlockState(pos).isAir()
+                && world.getBlockState(pos.up()).isAir();
+    }
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return ModSounds.GLOOMGRAZER_AMBIENT;
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return ModSounds.GLOOMGRAZER_HURT;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return ModSounds.GLOOMGRAZER_DEATH;
     }
 
     @Override
@@ -35,7 +78,7 @@ public final class GloomgrazerEntity extends AbstractCowEntity {
                         hand,
                         ItemUsage.exchangeStack(stack, player, new ItemStack(Items.DRAGON_BREATH))
                 );
-                this.playSound(SoundEvents.ENTITY_COW_MILK, 1.0F, 0.82F + this.random.nextFloat() * 0.18F);
+                this.playSound(ModSounds.GLOOMGRAZER_BOTTLE, 0.9F, 0.92F + this.random.nextFloat() * 0.16F);
             }
             return ActionResult.SUCCESS;
         }

@@ -6,5 +6,9 @@
   "biome.underworld.trunks": "Trunks",
   "biome.underworld.islands": "Islands",
   "dimension.underworld.the_underworld": "The Underworld",
-  "entity.underworld.gloomgrazer": "Gloomgrazer"
+  "entity.underworld.gloomgrazer": "Gloomgrazer",
+  "subtitles.underworld.gloomgrazer.ambient": "Gloomgrazer murmurs",
+  "subtitles.underworld.gloomgrazer.hurt": "Gloomgrazer hurts",
+  "subtitles.underworld.gloomgrazer.death": "Gloomgrazer dies",
+  "subtitles.underworld.gloomgrazer.bottle": "Gloomgrazer breath bottled"
 }

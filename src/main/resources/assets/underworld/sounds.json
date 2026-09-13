@@ -1,0 +1,29 @@
+{
+  "entity.gloomgrazer.ambient": {
+    "subtitle": "subtitles.underworld.gloomgrazer.ambient",
+    "sounds": [
+      "underworld:entity/gloomgrazer/ambient1",
+      "underworld:entity/gloomgrazer/ambient2",
+      "underworld:entity/gloomgrazer/ambient3"
+    ]
+  },
+  "entity.gloomgrazer.hurt": {
+    "subtitle": "subtitles.underworld.gloomgrazer.hurt",
+    "sounds": [
+      "underworld:entity/gloomgrazer/hurt1",
+      "underworld:entity/gloomgrazer/hurt2"
+    ]
+  },
+  "entity.gloomgrazer.death": {
+    "subtitle": "subtitles.underworld.gloomgrazer.death",
+    "sounds": [
+      "underworld:entity/gloomgrazer/death"
+    ]
+  },
+  "entity.gloomgrazer.bottle": {
+    "subtitle": "subtitles.underworld.gloomgrazer.bottle",
+    "sounds": [
+      "underworld:entity/gloomgrazer/bottle"
+    ]
+  }
+}

@@ -19,6 +19,7 @@ public final class UnderworldMod implements ModInitializer {
     @Override
     public void onInitialize() {
         ModBlocks.initialize();
+        ModSounds.initialize();
         ModEntities.initialize();
         ModWorldgen.initialize();
         PortalManager.initialize();
