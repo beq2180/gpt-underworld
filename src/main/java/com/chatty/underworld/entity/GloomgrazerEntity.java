@@ -30,7 +30,7 @@ public final class GloomgrazerEntity extends AbstractCowEntity {
 
         // Gloomgrazers are "milked" with bottles instead of buckets.
         if (!this.isBaby() && stack.isOf(Items.GLASS_BOTTLE)) {
-            if (!this.getWorld().isClient()) {
+            if (!this.getEntityWorld().isClient()) {
                 player.setStackInHand(
                         hand,
                         ItemUsage.exchangeStack(stack, player, new ItemStack(Items.DRAGON_BREATH))
